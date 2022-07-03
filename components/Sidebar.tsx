@@ -35,8 +35,8 @@ const Sidebar = () => {
               <p className="text-gray-400">
                 Log in to like and Comment on video
               </p>
-              <div classM>
-
+              <div className='pr-4'>
+                  <GoogleLogin/>
               </div>
             </div>
           )}
