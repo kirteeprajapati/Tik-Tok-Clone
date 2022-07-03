@@ -39,7 +39,8 @@ const Sidebar = () => {
                 <GoogleLogin
                   clientId=''
                   onSuccess={() => { }}
-                  onFailure={()=>{ } } />
+                  onFailure={() => { }}
+                cookiePolicy='single_host_origin'/>
               </div>
             </div>
           )}
