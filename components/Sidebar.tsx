@@ -39,7 +39,7 @@ const Sidebar = () => {
                 <GoogleLogin
                   clientId=''
                   render={(renderProps) => (
-                    <button onClick={rend}
+                    <button onClick={render}
                   )}
                   onSuccess={() => { }}
                   onFailure={() => { }}
