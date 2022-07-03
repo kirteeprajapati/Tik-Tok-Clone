@@ -36,7 +36,10 @@ const Sidebar = () => {
                 Log in to like and Comment on video
               </p>
               <div className='pr-4'>
-                  <GoogleLogin/>
+                <GoogleLogin
+                  clientId=''
+                  onSuccess={() => { }}
+                  onFailure={()=>{ } } />
               </div>
             </div>
           )}
