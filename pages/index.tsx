@@ -8,6 +8,6 @@ export const getServerSideProps=async () => {
   const response = await axios.get();
 }
 export const getServerSideProps=async () => {
-  
+  const response = await axios.get(`https://`)
 }
 export default Home
