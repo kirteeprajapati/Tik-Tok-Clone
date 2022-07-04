@@ -8,6 +8,6 @@ export const getServerSideProps=async () => {
   const response = await axios.get();
 }
 export const getServerSideProps=async () => {
-  const response = await axios.get(`https://`)
+  const response = await axios.get(`https://localhost:3000/api/post`);
 }
 export default Home
