@@ -7,4 +7,7 @@ const Home: NextPage = () => {
 export const getServerSideProps=async () => {
   const response = await axios.get();
 }
+export const getServerSideProps=async () => {
+  
+}
 export default Home
