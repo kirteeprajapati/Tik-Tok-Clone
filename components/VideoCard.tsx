@@ -12,10 +12,10 @@ interface IProps {
 
 const VideoCard: NextPage<IProps> = ({ post }) => {
     return (
-        <div className='flex flex-col border-b-2 border-gray-200 pb-6'>
+        <div className="flex flex-col border-b-2 border-gray-200 pb-6">
             <div>
-                <div className='flex gap-3 p-2 cursor-pointer font-semibold rounded'>
-                    <div className='md:w-16 md:h-16 w-10 h-10'>
+                <div className="flex gap-3 p-2 cursor-pointer font-semibold rounded">
+                    <div className="md:w-16 md:h-16 w-10 h-10">
                         <Link href="/">
                             <>
                                 <Image
@@ -24,15 +24,29 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
                                     className="rounded-full"
                                     src={post.postedBy.image}
                                     alt="profile photo"
-                                    layout='responsive'
+                                    layout="responsive"
                                 />
                             </>
+                        </Link>
+                    </div>
+                    <div>
+                        <Link href="/">
+                            <div>
+                                <p>
+                                    {post.postedBy.userName}
+                                    {`
+                                    `}
+
+                                    <GoVerified className="text-blue-400 text-md" />
+                                </p>
+                                <p>{post.postedBy.userName}</p>
+                            </div>
                         </Link>
                     </div>
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default VideoCard
