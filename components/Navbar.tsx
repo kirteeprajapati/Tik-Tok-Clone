@@ -8,9 +8,15 @@ import { IoMdAdd } from "react-icons/io";
 import { GoogleLogin, googleLogout } from "@react-oauth/google";
 import logo from "../utils/tiktik-logo.png";
 import { createOrGetUser } from "../utils";
+import useAuthStore from "../store/authStore";
+import { IUser } from "../types";
 
 const Navbar = () => {
-  const user = false;
+  const [user, setUser] = useState<IUser | null>();
+  const [searchValue, setSearchValue] = useState("");
+  const router = useRouter();
+  const { userProfile, addUser, removeUser } = useAuthStore();
+  
   return (
     <div className="w-full flex justify-between items-center border-b-2 border-gray-200 py-2 px-4">
       <Link href="/">
@@ -25,11 +31,34 @@ const Navbar = () => {
       </Link>
       <div>SEARCH</div>
       <div>
-        {user ? (
-          <div>Logged In</div>
+        {userProfile ? (
+          <div className="flex gap-5 md:gap-10">
+            <Link href="/upload">
+              <button className="border-2 px-2 md:px-4 text-md font-semibold flex items-center gap-2">
+                <IoMdAdd className="text-xl" />{" "}
+                <span className="hidden md:block">Upload</span>
+              </button>
+            </Link>
+            {userProfile.image && (
+              <Link href={`/profile/${postedBy?._id}`}>
+                <>
+                  <Image
+                    width={40}
+                    height={40}
+                    className=" rounded-full"
+                    src={userProfile.image}
+                    alt="user-profile"
+                  />
+                </>
+              </Link>
+            )}
+            <button type="button" className="ps-2" onClick={() => { googleLogout(); removeUser(); }}>
+              <AiOutlineLogout color='red' fontSize={21}/>
+            </button>
+          </div>
         ) : (
           <GoogleLogin
-            onSuccess={(response) => createOrGetUser(response)}
+            onSuccess={(response, addUser) => createOrGetUser(response)}
             onError={() => console.log("Error")}
           />
         )}
