@@ -9,4 +9,4 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     client.createIfNotExists(doc).then(() => {
         res.status(200).json('Login successful');
     });
-}
+} 
