@@ -204,7 +204,7 @@ const Upload = () => {
                             {savingPost ? "Posting..." : "Post"}
                         </button>
                     </div>
-                </div>
+                </div> 
             </div>
         </div>
     ); 
