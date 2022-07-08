@@ -207,7 +207,7 @@ const Upload = () => {
                 </div>
             </div>
         </div>
-    );
+    ); 
 };
 
 export default Upload;
