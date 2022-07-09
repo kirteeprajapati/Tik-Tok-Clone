@@ -31,5 +31,4 @@ const Discover = () => {
         </div>
     )
 }
-
 export default Discover
